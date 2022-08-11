@@ -7,20 +7,24 @@ on:
   push:
     branches:
       - "main"
+      
 
 jobs:
-  docker:
+  description:
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
       - name: Updating Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          # repository: acheremisov/opencanary
-          # readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}
-          
+  build:
+    runs-on: ubuntu-latest
+    steps: 
       - name: Checkout
         uses: actions/checkout@v3
         with:
