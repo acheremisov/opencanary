@@ -20,7 +20,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*/}
+          DOCKER_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/${GITHUB_REPOSITORY#*/}
           VERSION=latest
           SHORTREF=${GITHUB_SHA::8}
 
@@ -65,4 +65,4 @@ jobs:
           file: ./Dockerfile.latest
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: acheremisov/opencanary:latest
+          tags: ${{ steps.prep.outputs.tags }}
