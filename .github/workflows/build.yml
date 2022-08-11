@@ -11,18 +11,20 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: thinkst/opencanary
+      
       - name: Updating Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: acheremisov/opencanary
-          
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          repository: thinkst/opencanary
+          readme-filepath: ./README.md
+          short-description: ${{ github.event.repository.description }}
 
       - name: Prepare
         id: prep
