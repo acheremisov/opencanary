@@ -9,10 +9,14 @@ Builds for ARM64 and x86
 ```
 services:
   opencanary:
+    image: acheremisov/opencanary:latest
+    container_name: opencanary
+    restart: unless-stopped
     name: opencanary
     ports:
-      - "21:21"
-      - "80:80"
+    # Include other ports, depends on your config file
+      - 21:21
+      - 80:80
     volumes:
       - "${PWD}/data/.opencanary.conf":"/root/.opencanary.conf"
 ```
