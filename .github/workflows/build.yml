@@ -17,8 +17,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: acheremisov/opencanary
-          readme-filepath: ./README.md
+          # repository: acheremisov/opencanary
+          # readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}
           
       - name: Checkout
