@@ -4,7 +4,7 @@ Docker builds every week based on [official OpenCanary repository](https://githu
 Build repo - https://github.com/acheremisov/opencanary.  
 Builds for ARM64 and x86
 
-*Docker Compose*
+**Docker Compose**
 
 ```
 services:
@@ -17,4 +17,4 @@ services:
       - "${PWD}/data/.opencanary.conf":"/root/.opencanary.conf"
 ```
 
-Configuration file - https://opencanary.readthedocs.io/en/latest/starting/configuration.html
+[Configuration file and environment variables](https://opencanary.readthedocs.io/en/latest/starting/configuration.html)
