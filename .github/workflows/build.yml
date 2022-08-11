@@ -65,4 +65,4 @@ jobs:
           file: ./Dockerfile.latest
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ steps.prep.outputs.tags }}
+          tags: acheremisov/opencanary:latest
