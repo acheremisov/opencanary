@@ -12,11 +12,6 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps: 
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          repository: thinkst/opencanary
-      
       - name: Updating Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
         with:
@@ -25,6 +20,11 @@ jobs:
           repository: acheremisov/opencanary
           readme-filepath: ./README.md
           short-description: ${{ github.event.repository.description }}
+          
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: thinkst/opencanary
 
       - name: Prepare
         id: prep
