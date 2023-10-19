@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Updating Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: thinkst/opencanary
 
